@@ -31,8 +31,10 @@ function renderCoffees(coffees) {
 
 // Takes in the input from Roast Selection and updates the Coffee Table's Content
 function updateCoffees(e) {
+
     e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value; //Establishes the criteria to filter the Coffee Table
+    let selectedRoast = roastSelection.value;//Establishes the criteria to filter the Coffee Table
+
     let filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
@@ -61,17 +63,19 @@ let coffees = [
 ];
 
 let tbody = document.querySelector('#coffees'); //Holds the Coffee Table contents in HTML
-let submitButtonLight = document.querySelector('#submit-light');
-let submitButtonMedium = document.querySelector('#submit-medium');
-let submitButtonDark = document.querySelector('#submit-dark');
+// let submitButtonLight = document.getElementById("submit-light");
+// let submitButtonMedium = document.querySelector('#submit-medium');
+// let submitButtonDark = document.querySelector('#submit-dark');
 let roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButtonLight.addEventListener('click', updateCoffees);
-submitButtonMedium.addEventListener('click', updateCoffees);
-submitButtonDark.addEventListener('click', updateCoffees);
 
+// submitButtonLight.addEventListener('click', updateCoffees);
+// submitButtonMedium.addEventListener('click', updateCoffees);
+// submitButtonDark.addEventListener('click', updateCoffees);
+
+roastSelection.addEventListener('change', updateCoffees);
 
 /*
 - Create 3 variables to count dark, medium, and light roasts
