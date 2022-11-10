@@ -2,13 +2,6 @@
 
 // Creates the initial coffee table by taking in the Coffee Array's objects and organizing them
 function renderCoffee(coffee) {
-    // let html = '<tr class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
-    // html += '<td>' + coffee.name + '</td>';
-    // html += '<td>' + coffee.roast + '</td>';
-    // html += '</tr>';
-    //
-    // return html;
 
     let coffeeCards = '<div class="card" style="width: 18rem;">';
     coffeeCards += '<div class="card-body">'
@@ -24,36 +17,47 @@ function renderCoffee(coffee) {
 function renderCoffees(coffees) {
     let html = '';
     for(let i = 0; i < coffees.length; i++) {
+        // if ()
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
-// Takes in the input from Roast Selection and updates the Coffee Table's Content
+//-----Function takes in the input from Roast Selection and updates the Coffee Table's Content-----//
 function updateCoffees(e) {
+    //------------don't submit the form, we just want to update the data-------------------------//
+    e.preventDefault();
 
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;//Establishes the criteria to filter the Coffee Table
+    //-------------Establishes the criteria to filter the Coffee Table--------------------------//
+    let selectedRoast = roastSelection.value;
 
+    //-------- Creates Variable to fill with known coffees of the selected Roast------------------//
     let filteredCoffees = [];
+
+    //-----------Takes in the Array's criteria and adds it to a new array--------------------------//
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee); //takes in the Array's criteria and adds it to a new array
+            filteredCoffees.push(coffee);
         }
     });
+
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-// Function to take in users coffee name and check against known coffees
-function searchCoffees(e) {
 
+function searchCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;//Establishes the criteria to filter the Coffee Table
+
+
+    let selectedRoast = roastSelection.value;
+
 
     let filteredCoffees = [];
+
+
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee); //takes in the Array's criteria and adds it to a new array
+            filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
@@ -80,48 +84,51 @@ let coffees = [
     {id: 307, name: 'Italian', roast: 'dark'},
     {id: 308, name: 'French', roast: 'dark'},
 ];
+//------------- Creates Variable that holds Coffee Cards in html format for later display ---------//
+let tbody = document.querySelector('#coffees');
 
-let tbody = document.querySelector('#coffees'); //Holds the Coffee Table contents in HTML
+//-------- Creates Variable that holds user selection for Roast Type (Dark, Medium, Light) -------//
 let roastSelection = document.querySelector('#roast-selection');
 
+//--------------- Adds filtered Coffee Cards to the HTML document for display --------------------//
 tbody.innerHTML = renderCoffees(coffees);
 
-// let userCoffeeSearch = document.getElementById('userInput').value;
-// console.log(userCoffeeSearch)
-
-
+//------- Gets Coffee Search Bar Input and returns array with matching coffee names ----------------//
 function searchCoffee() {
+    //---- Holds Coffee Search Bar User Input and sets it to lower case------- //
     let input = document.getElementById('search-Coffee').value;
     input = input.toLowerCase();
-    let coffeeType =[];
-    coffees.forEach(function(coffee) {
-        coffeeType.push(coffee.name);
-    })
+    //------ Creates Variable that holds known coffee names in an array--------//
+    // let coffeeType =[];
+
+    // coffees.forEach(function(coffee) {
+    //     coffeeType.push(coffee.name);
+    // })
+    let userfilter = [];
 
 
-    for (let i = 0; i < coffeeType.length; i++) {
-        if (coffeeType[i].toLowerCase().includes(input)) {
-            console.log(coffeeType[i]);
-            // return coffeeType[i];
+    //------ Compares User Input in Coffee Search Bar against known coffee selection--------//
+    for (let i = 0; i < coffees.length; i++) {
+        if (coffees[i].name.toLowerCase().includes(input)) {
+            console.log(coffees[i]);
+            userfilter.push(coffees[i]);
         }
-        // console.log(coffeeType)
-        // else {
-        //     coffeeType[i].style.display="list-item";
-        // }
     }
+    tbody.innerHTML = renderCoffees(userfilter)
 }
 
+//------------ Function filters coffee based on user input and feeds to coffee cards -----------//
 
-//created variable for coffee searchbar input
+//---------------- Created variable for coffee searchbar input ---------------------------------//
 let coffeeInput = document.getElementById('search-Coffee');
-console.log(coffeeInput)
+
+console.log(searchCoffee());
+
+
 coffeeInput.addEventListener("change", searchCoffee);
 
 
-
-
-
-
+//------------------ Filters and Updates Coffee Cards based on Roast Selection ----------------
 roastSelection.addEventListener('change', updateCoffees);
 
 /*
@@ -129,7 +136,7 @@ roastSelection.addEventListener('change', updateCoffees);
 Skeleton:
 
 User Search
-        - Get attribute from form
+        - Get attribute from form ################
         - Take attribute and search again known coffees
 
 create user input form that creates new coffee cards
@@ -141,5 +148,6 @@ create user input form that creates new coffee cards
 
 
 Design the site, make it perty
-
+    - Change Similar Variables so its less confusing
+    - make search bar update on typing
  */
