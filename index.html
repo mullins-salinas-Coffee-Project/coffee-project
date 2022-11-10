@@ -9,33 +9,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Coffee!</h1>
-<!--HTML for known coffee search functions-->
-    <form name="searchForm">
-        <label for="roast-selection"></label>
-        <select id="roast-selection" >
-            <option id="submit-light">light</option>
-            <option id="submit-medium">medium</option>
-            <option id="submit-dark">dark</option>
-        </select>
-        <input id="search-Coffee" type="text"
-               name="search" placeholder="Search Coffee...">
-    </form>
+    <h1>Distiguished Gentelmen's Coffee</h1>
+<!------------------------- HTML for known coffee search functions --------------------------->
+    <div class="card">
+        <div class="card-body">
+            <form name="searchForm">
+<!------------------------- Creates Drop Down Selector for filtering by roast type ----------->
+                <label for="roast-selection"></label>
+                <select id="roast-selection" class="form-select" aria-label="Default select example" >
+                    <option id="submit-light">light</option>
+                    <option id="submit-medium">medium</option>
+                    <option id="submit-dark">dark</option>
+                </select>
 
-<!--    HTML for creating a new coffee-->
+<!--                <input id="search-Coffee" type="text"-->
+<!--                       name="search" placeholder="Search Coffee...">-->
+
+                <div class="input-group mb-3">
+                    <input id="search-Coffee" type="text" class="form-control" placeholder="Search for Coffee" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="search-coffee-button">Add a Coffee Bean here</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+<!-------------------------- HTML for creating a new coffee ---------------------------------->
     <form name="newRoastType">
-        <label for="new-roast-selection"></label>
-        <select id="new-roast-selection" >
-            <option id="new-submit-light">light</option>
-            <option id="new-submit-medium">medium</option>
-            <option id="new-submit-dark">dark</option>
-        </select>
-        <input id="new-coffee-name" type="text"
-               name="search" placeholder="New Coffee Name...">
-    </form>
+<!------------------------- Creates Drop Down Selector for filtering by roast type ----------->
+        <div class="card">
+            <div class="card-body">
+                <form name="searchForm">
+                    <label for="new-roast-selection"></label>
+                    <select id="new-roast-selection" class="form-select" aria-label="Default select example">
+                        <option id="Roast Type">Roast Type</option>
+                        <option id="new-submit-light">light</option>
+                        <option id="new-submit-medium">medium</option>
+                        <option id="new-submit-dark">dark</option>
+                    </select>
+<!--                    <input id="new-coffee-name" type="text"-->
+<!--                           name="search" placeholder="New Coffee Name...">-->
+                    <div class="input-group mb-3">
+                        <input id="new-coffee-name" type="text" class="form-control" placeholder="Add Coffee Here" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="add-coffee-button">Add a Coffee Bean here</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     <div id="coffees"> </div>
-
 
     <!-- Bootstrap JavaScript Bundle with Popper ----------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
