@@ -17,7 +17,7 @@ function renderCoffee(coffee) {
     coffeeCards += '</div>'
     coffeeCards += '</div>'
 
-    return coffeeCards
+    return coffeeCards;
 }
 
 // Takes in the filtered Array of objects and adds to the established Coffee Table
@@ -86,8 +86,38 @@ let roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-let userCoffeeSearch = document.getElementById('userInput');
-console.log(userCoffeeSearch)
+// let userCoffeeSearch = document.getElementById('userInput').value;
+// console.log(userCoffeeSearch)
+
+
+function searchCoffee() {
+    let input = document.getElementById('search-Coffee').value;
+    input = input.toLowerCase();
+    let coffeeType =[];
+    coffees.forEach(function(coffee) {
+        coffeeType.push(coffee.name);
+    })
+
+
+    for (let i = 0; i < coffeeType.length; i++) {
+        if (coffeeType[i].toLowerCase().includes(input)) {
+            console.log(coffeeType[i]);
+            // return coffeeType[i];
+        }
+        // console.log(coffeeType)
+        // else {
+        //     coffeeType[i].style.display="list-item";
+        // }
+    }
+}
+
+
+//created variable for coffee searchbar input
+let coffeeInput = document.getElementById('search-Coffee');
+console.log(coffeeInput)
+coffeeInput.addEventListener("change", searchCoffee);
+
+
 
 
 
@@ -95,10 +125,21 @@ console.log(userCoffeeSearch)
 roastSelection.addEventListener('change', updateCoffees);
 
 /*
-- Create 3 variables to count dark, medium, and light roasts
-- Set each variable equal to a function that runs through the 'Coffees' array and counts the number of
-  instances each category appears
-- Make newly inputted coffee's IDs = to variable counter + 1
 
+Skeleton:
+
+User Search
+        - Get attribute from form
+        - Take attribute and search again known coffees
+
+create user input form that creates new coffee cards
+        - Create 3 variables to count dark, medium, and light roasts
+        - Set each variable equal to a function that runs through the 'Coffees' array and counts the number of
+          instances each category appears
+        - Make newly inputted coffee's IDs = to variable counter + 1
+
+
+
+Design the site, make it perty
 
  */
