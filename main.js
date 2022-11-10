@@ -44,6 +44,25 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// Function to take in users coffee name and check against known coffees
+function searchCoffees(e) {
+
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let selectedRoast = roastSelection.value;//Establishes the criteria to filter the Coffee Table
+
+    let filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.roast === selectedRoast) {
+            filteredCoffees.push(coffee); //takes in the Array's criteria and adds it to a new array
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+
+
+
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 101, name: 'Light City', roast: 'light'},
@@ -63,17 +82,15 @@ let coffees = [
 ];
 
 let tbody = document.querySelector('#coffees'); //Holds the Coffee Table contents in HTML
-// let submitButtonLight = document.getElementById("submit-light");
-// let submitButtonMedium = document.querySelector('#submit-medium');
-// let submitButtonDark = document.querySelector('#submit-dark');
 let roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
+let userCoffeeSearch = document.getElementById('userInput');
+console.log(userCoffeeSearch)
 
-// submitButtonLight.addEventListener('click', updateCoffees);
-// submitButtonMedium.addEventListener('click', updateCoffees);
-// submitButtonDark.addEventListener('click', updateCoffees);
+
+
 
 roastSelection.addEventListener('change', updateCoffees);
 

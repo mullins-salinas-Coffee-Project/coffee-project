@@ -11,26 +11,28 @@
 <body>
     <h1>Coffee!</h1>
 
-    <form>
+    <form name="searchForm">
         <label for="roast-selection"></label>
         <select id="roast-selection" >
             <option id="submit-light">light</option>
             <option id="submit-medium">medium</option>
             <option id="submit-dark">dark</option>
         </select>
-<!--        <input id="submit" type="submit" />-->
+<!--        <div class="input-group mb-3">-->
+<!--            <input type="text" class="form-control" id='userInput' placeholder="Coffee" aria-label="Coffee" aria-describedby="button-addon2">-->
+<!--            <button class="btn btn-outline-secondary" type="button" id="">Search</button>-->
+<!--        </div>-->
+
+        <label for="userInput">coffee</label>
+        <input id="userInput" type="text">
+
+        <div>
+           <button type="submit">do it</button>
+        </div>
+
     </form>
 
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        -->
-<!--    </table>-->
+
     <div id="coffees"> </div>
 
 
