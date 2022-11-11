@@ -23,6 +23,19 @@ function renderCoffees(coffees) {
     return html;
 }
 
+
+function pullFromLocalStorage(){
+    let localStorageCoffees = JSON.parse(localStorage.getItem('newCoffees'));
+
+
+    localStorageCoffees.forEach(function(coffee){
+        coffees.push(coffee);
+    })
+    updateCoffees();
+    console.log(localStorageCoffees);
+    console.log(coffees);
+}
+
 //-----Function takes in the input from Roast Selection and updates the Coffee Table's Content-----//
 function updateCoffees() {
     //------------don't submit the form, we just want to update the data-------------------------//
@@ -35,14 +48,12 @@ function updateCoffees() {
     input = input.toLowerCase();
     let filteredCoffees = [];
 
-
     //-----------Takes in the Array's criteria and adds it to a new array--------------------------//
     coffees.forEach(function(coffee) {
         if (((coffee.roast === selectedRoast) || (selectedRoast === 'all')) && (coffee.name.toLowerCase().includes(input))){
             filteredCoffees.push(coffee);
         }
     });
-
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
@@ -67,16 +78,23 @@ let coffees = [
     {id: 308, name: 'French', roast: 'dark'},
 ];
 
+let localStorageCoffeeArray = JSON.parse(localStorage.getItem('newCoffees'));
 
 //----------------------------creates new coffee obj-------------------
 function createCoffee(){
     let newCoffeeInput = document.getElementById('new-coffee-name').value;
     let newCoffeeRoast = document.querySelector('#new-roast-selection').value;
     let newCoffeeObj = {};
+
+
+
+
     newCoffeeObj.id = '';
     newCoffeeObj.name = newCoffeeInput;
     newCoffeeObj.roast = newCoffeeRoast;
     coffees.push(newCoffeeObj);
+    localStorageCoffeeArray.push(newCoffeeObj);
+    localStorage.setItem('newCoffees', JSON.stringify(localStorageCoffeeArray));
     updateCoffees();
 }
 
@@ -98,7 +116,11 @@ coffeeInput.addEventListener('keyup', updateCoffees);
 //------------------ runs create coffee function when button is pressed-----------------------//
 let addCoffeeBtn = document.getElementById('add-coffee-button');
 addCoffeeBtn.addEventListener('click', createCoffee);
+
+
+window.addEventListener('load', pullFromLocalStorage);
 /*-----------------------------------------------------------------------------------------------
+
 
 Skeleton:
 
