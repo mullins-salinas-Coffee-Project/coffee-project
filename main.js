@@ -24,19 +24,21 @@ function renderCoffees(coffees) {
 }
 
 //-----Function takes in the input from Roast Selection and updates the Coffee Table's Content-----//
-function updateCoffees(e) {
+function updateCoffees() {
     //------------don't submit the form, we just want to update the data-------------------------//
     // e.preventDefault();
 
     //-------------Establishes the criteria to filter the Coffee Table--------------------------//
     let selectedRoast = roastSelection.value;
+    selectedRoast = selectedRoast.toLowerCase();
     let input = document.getElementById('search-Coffee').value;
     input = input.toLowerCase();
     let filteredCoffees = [];
 
+
     //-----------Takes in the Array's criteria and adds it to a new array--------------------------//
     coffees.forEach(function(coffee) {
-        if ((coffee.roast === selectedRoast) && (coffee.name.toLowerCase().includes(input))){
+        if (((coffee.roast === selectedRoast) || (selectedRoast === 'all')) && (coffee.name.toLowerCase().includes(input))){
             filteredCoffees.push(coffee);
         }
     });
@@ -44,24 +46,6 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
-function searchCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-
-
-    let selectedRoast = roastSelection.value;
-
-
-    let filteredCoffees = [];
-
-
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
 // ------------------- Add to Coffee Object-----------------------------//
 
 
@@ -83,43 +67,37 @@ let coffees = [
     {id: 308, name: 'French', roast: 'dark'},
 ];
 
-let newCoffeeInput = document.getElementById('new-coffee-name').value;
-let newCoffeeRoast = document.querySelector('#new-roast-selection').value;
 
+//----------------------------creates new coffee obj-------------------
 function createCoffee(){
+    let newCoffeeInput = document.getElementById('new-coffee-name').value;
+    let newCoffeeRoast = document.querySelector('#new-roast-selection').value;
     let newCoffeeObj = {};
-    newCoffeeObj.id = 104;
+    newCoffeeObj.id = '';
     newCoffeeObj.name = newCoffeeInput;
     newCoffeeObj.roast = newCoffeeRoast;
-
-
-    console.log(newCoffeeObj);
     coffees.push(newCoffeeObj);
-    console.log(coffees);
+    updateCoffees();
 }
-console.log(newCoffeeInput);
-console.log(newCoffeeRoast);
-createCoffee();
+
 //------------- Creates Variable that holds Coffee Cards in html format for later display ---------//
 let tbody = document.querySelector('#coffees');
 
-//-------- Creates Variable that holds user selection for Roast Type (Dark, Medium, Light) -------//
+//-------- Creates Variable that holds user selection for Roast Type (Dark, Medium, Light) and created listener that Filters and Updates Coffee Cards based on Roast Selection-------//
 let roastSelection = document.querySelector('#roast-selection');
-
+roastSelection.addEventListener('change', updateCoffees);
 
 //--------------- Adds filtered Coffee Cards to the HTML document for display --------------------//
 tbody.innerHTML = renderCoffees(coffees);
 
-//------------ Function filters coffee based on user input and feeds to coffee cards -----------//
 
-//---------------- Created variable for coffee searchbar input ---------------------------------//
+//---------------- Created variable for coffee searchbar input and created listener that Filters coffee card list based on coffee search bar---------------------------------//
 let coffeeInput = document.getElementById('search-Coffee');
+coffeeInput.addEventListener('change', updateCoffees);
 
-
-//------------------ Filters and Updates Coffee Cards based on Roast Selection ----------------//
-roastSelection.addEventListener('change', updateCoffees);
-//------------------ Filters coffee card list based on coffee search bar-----------------------//
-coffeeInput.addEventListener("change", updateCoffees);
+//------------------ runs create coffee function when button is pressed-----------------------//
+let addCoffeeBtn = document.getElementById('add-coffee-button');
+addCoffeeBtn.addEventListener('click', createCoffee);
 /*-----------------------------------------------------------------------------------------------
 
 Skeleton:
