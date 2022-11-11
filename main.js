@@ -93,7 +93,7 @@ tbody.innerHTML = renderCoffees(coffees);
 
 //---------------- Created variable for coffee searchbar input and created listener that Filters coffee card list based on coffee search bar---------------------------------//
 let coffeeInput = document.getElementById('search-Coffee');
-coffeeInput.addEventListener('change', updateCoffees);
+coffeeInput.addEventListener('keyup', updateCoffees);
 
 //------------------ runs create coffee function when button is pressed-----------------------//
 let addCoffeeBtn = document.getElementById('add-coffee-button');
