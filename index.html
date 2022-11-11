@@ -9,28 +9,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Distiguished Gentelmen's Coffee</h1>
+    <h1>Distinguished Gentleman's Coffee</h1>
 <!------------------------- HTML for known coffee search functions --------------------------->
     <div class="card">
         <div class="card-body">
             <form name="searchForm">
 <!------------------------- Creates Drop Down Selector for filtering by roast type ----------->
                 <label for="roast-selection"></label>
-                <select id="roast-selection" class="form-select" aria-label="Default select example" >
-                    <option id="submit-light">light</option>
-                    <option id="submit-medium">medium</option>
-                    <option id="submit-dark">dark</option>
+                <select id="roast-selection" class="form-select" aria-label="Default select example">
+                    <option id="submit-all">All</option>
+                    <option id="submit-light">Light</option>
+                    <option id="submit-medium">Medium</option>
+                    <option id="submit-dark">Dark</option>
                 </select>
-
 <!--                <input id="search-Coffee" type="text"-->
 <!--                       name="search" placeholder="Search Coffee...">-->
-
                 <div class="input-group mb-3">
                     <input id="search-Coffee" type="text" class="form-control" placeholder="Search for Coffee" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="search-coffee-button">Add a Coffee Bean here</button>
                 </div>
-
-
             </form>
         </div>
     </div>
@@ -40,9 +36,8 @@
         <div class="card">
             <div class="card-body">
                 <form name="searchForm">
-                    <label for="new-roast-selection"></label>
+                    <label for="new-roast-selection">Roast Type</label>
                     <select id="new-roast-selection" class="form-select" aria-label="Default select example">
-                        <option id="Roast Type">Roast Type</option>
                         <option id="new-submit-light">light</option>
                         <option id="new-submit-medium">medium</option>
                         <option id="new-submit-dark">dark</option>
@@ -57,7 +52,7 @@
             </div>
         </div>
 
-    <div id="coffees"> </div>
+    <div class="d-flex flex-wrap" id="coffees"> </div>
 
     <!-- Bootstrap JavaScript Bundle with Popper ----------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
