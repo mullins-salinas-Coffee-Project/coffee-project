@@ -23,19 +23,6 @@ function renderCoffees(coffees) {
     return html;
 }
 
-
-function pullFromLocalStorage(){
-    let localStorageCoffees = JSON.parse(localStorage.getItem('newCoffees'));
-
-
-    localStorageCoffees.forEach(function(coffee){
-        coffees.push(coffee);
-    })
-    updateCoffees();
-    console.log(localStorageCoffees);
-    console.log(coffees);
-}
-
 //-----Function takes in the input from Roast Selection and updates the Coffee Table's Content-----//
 function updateCoffees() {
     //------------don't submit the form, we just want to update the data-------------------------//
@@ -78,15 +65,13 @@ let coffees = [
     {id: 308, name: 'French', roast: 'dark'},
 ];
 
-let localStorageCoffeeArray = JSON.parse(localStorage.getItem('newCoffees'));
+let localStorageCoffeeArray = [];
 
 //----------------------------creates new coffee obj-------------------
 function createCoffee(){
     let newCoffeeInput = document.getElementById('new-coffee-name').value;
     let newCoffeeRoast = document.querySelector('#new-roast-selection').value;
     let newCoffeeObj = {};
-
-
 
 
     newCoffeeObj.id = '';
@@ -97,6 +82,26 @@ function createCoffee(){
     localStorage.setItem('newCoffees', JSON.stringify(localStorageCoffeeArray));
     updateCoffees();
 }
+
+
+
+function pullFromLocalStorage(){
+    let localStorageCoffees = JSON.parse(localStorage.getItem('newCoffees'));
+
+    if (localStorageCoffees == null) {
+        localStorage.setItem('newCoffees', JSON.stringify(localStorageCoffeeArray));
+    } else {
+        localStorageCoffees.forEach(function (coffee) {
+            coffees.push(coffee);
+
+        })
+    }
+    updateCoffees();
+    console.log(localStorageCoffees);
+    console.log(coffees);
+}
+
+
 
 //------------- Creates Variable that holds Coffee Cards in html format for later display ---------//
 let tbody = document.querySelector('#coffees');
