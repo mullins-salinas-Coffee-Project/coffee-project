@@ -9,50 +9,88 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Distinguished Gentleman's Coffee</h1>
-<!------------------------- HTML for known coffee search functions --------------------------->
-    <div class="card">
-        <div class="card-body">
-            <form name="searchForm">
-<!------------------------- Creates Drop Down Selector for filtering by roast type ----------->
+    <div class="col-12 d-flex justify-content-center">
+        <h1>Distinguished Gentleman's Coffee</h1>
+    </div>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <!--------------------------------- Nav Bar Title ------------------------------------>
+            <a class="navbar-brand" href="#"> (DGCC Logo) Be Classy. Get <strong>Manly</strong>, gently</a>
+            <div class="d-flex" style="margin-top: 1em">
+                <div class="input-group mb-3" style="width: 50%; height: 3em;">
+                    <input id="search-Coffee" type="text" class="form-control" placeholder="Find Your Demitasse" aria-label="Recipient's username" aria-describedby="button-addon2">
+                </div>
                 <label for="roast-selection"></label>
-                <select id="roast-selection" class="form-select" aria-label="Default select example">
+                <select id="roast-selection" class="form-select" aria-label="Default select example" style="width: 50%; height: 3em;">
                     <option id="submit-all">All</option>
                     <option id="submit-light">Light</option>
                     <option id="submit-medium">Medium</option>
                     <option id="submit-dark">Dark</option>
                 </select>
-<!--                <input id="search-Coffee" type="text"-->
-<!--                       name="search" placeholder="Search Coffee...">-->
-                <div class="input-group mb-3">
-                    <input id="search-Coffee" type="text" class="form-control" placeholder="Search for Coffee" aria-label="Recipient's username" aria-describedby="button-addon2">
+            </div>
+            <!------------------------------ Open Menu Title ------------------------------------->
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> Welcome, how may we assist, good sir? </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-            </form>
-        </div>
-    </div>
-<!-------------------------- HTML for creating a new coffee ---------------------------------->
-    <form name="newRoastType">
-<!------------------------- Creates Drop Down Selector for filtering by roast type ----------->
-        <div class="card">
-            <div class="card-body">
-                <form name="searchForm">
-                    <label for="new-roast-selection">Roast Type</label>
-                    <select id="new-roast-selection" class="form-select" aria-label="Default select example">
-                        <option id="new-submit-light">light</option>
-                        <option id="new-submit-medium">medium</option>
-                        <option id="new-submit-dark">dark</option>
-                    </select>
-<!--                    <input id="new-coffee-name" type="text"-->
-<!--                           name="search" placeholder="New Coffee Name...">-->
-                    <div class="input-group mb-3">
-                        <input id="new-coffee-name" type="text" class="form-control" placeholder="Add Coffee Here" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="add-coffee-button">Add a Coffee Bean here</button>
-                    </div>
-                </form>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <!---------------------- First Item in Open Menu ------------------------->
+                        <li class="nav-item">
+                            <a>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form name="searchForm">
+                                            <label for="new-roast-selection" style="color: black"> Be Distinguished. Add to the Collection. </label>
+                                            <select id="new-roast-selection" class="form-select" aria-label="Default select example">
+                                                <option id="new-submit-light">light</option>
+                                                <option id="new-submit-medium">medium</option>
+                                                <option id="new-submit-dark">dark</option>
+                                            </select>
+                                            <!--                    <input id="new-coffee-name" type="text"-->
+                                            <!--                           name="search" placeholder="New Coffee Name...">-->
+                                            <div class="input-group mb-3">
+                                                <input id="new-coffee-name" type="text" class="form-control" placeholder="Add Coffee Here" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary" type="button" id="add-coffee-button">Add a Coffee Bean here</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        </form>
+                    </ul>
+                </div>
             </div>
         </div>
-
-    <div class="d-flex flex-wrap" id="coffees"> </div>
+    </nav>
+    <!------------------------------------ Nav Bar End ------------------------------------------->
+    <!--------------------------------- Container ------------------------------------------->
+    <div class="container">
+        <div class="row col-9">
+    <!-------- Container for the function that renders coffee cards ------------->
+            <div class="d-flex flex-wrap" id="coffees" style="margin-top: 3em;"> </div>
+        </div>
+        <!-- Conatiner that holds -->
+            <!------------------------------------ Cigar Pairing Card ------------------------------------------->
+        <div class="row d-flex justify-content-end mt-5">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Know your pairing
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Mild Cigar: Paired best with a Light Roast. </li>
+                    <li class="list-group-item"> Medium to Full Body Cigar: Paired best with a Medium Roast </li>
+                    <li class="list-group-item"> Rich Full Body Cigar: Paired best with a Dark Roast </li>
+                </ul>
+        </div>
+        </div>
+    </div>
+<!----------------------------- Button for the add feature --------------------------------------->
+    <button class="navbar-toggler fixed-bottom rounded-circle btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" style="background-color: chocolate; margin: 2em;">
+        <span class="navbar-toggler-icon" style=" margin: 2.5em"> Add </span>
+    </button>
 
     <!-- Bootstrap JavaScript Bundle with Popper ----------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

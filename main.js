@@ -6,7 +6,7 @@ function renderCoffee(coffee) {
     let coffeeCards = '<div class="card" style="width: 18rem;">';
     coffeeCards += '<div class="card-body">'
     coffeeCards += '<h5 class="card-title"> '+ coffee.name +' </h5>'
-    coffeeCards += '<p class="card-text">placeholder info.</p>'
+    coffeeCards += '<p class="card-text">'+ coffee.roast +'</p>'
     coffeeCards += '</div>'
     coffeeCards += '</div>'
 
