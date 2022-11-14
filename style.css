@@ -1,9 +1,34 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+html, body {
+    font-family: 'Chivo', sans-serif;
+    color: #e7b17d;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+body {
+    background-color: #99592b;
+}
+
+.headerFont {
+    font-family: 'MuseoModerno', sans-serif;
+}
+
+.navbar-brand img {
+    width: 10%;
+    height: 10%;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #551e19;
+}
+
+.coffeeCard {
+    margin: 5px;
+    background-color: #551E19;
+    text-align: center;
+}
+
+.coffeeCard img {
+    width: 100%;
+    height: 70%;
 }
