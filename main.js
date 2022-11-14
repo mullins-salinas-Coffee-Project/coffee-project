@@ -3,10 +3,11 @@
 // Creates the initial coffee table by taking in the Coffee Array's objects and organizing them
 function renderCoffee(coffee) {
 
-    let coffeeCards = '<div class="card" style="width: 18rem;">';
+    let coffeeCards = '<div class="card coffeeCard" style="width: 18rem;">';
+    coffeeCards += '<img src="' + coffee.image +'" className="card-img-top" alt="...">';
     coffeeCards += '<div class="card-body">'
     coffeeCards += '<h5 class="card-title"> '+ coffee.name +' </h5>'
-    coffeeCards += '<p class="card-text">'+ coffee.roast +'</p>'
+    coffeeCards += '<p class="card-text">' + coffee.roast + '</p>'
     coffeeCards += '</div>'
     coffeeCards += '</div>'
 
@@ -49,41 +50,21 @@ function updateCoffees() {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
-    {id: 101, name: 'Light City', roast: 'light'},
-    {id: 102, name: 'Half City', roast: 'light'},
-    {id: 103, name: 'Cinnamon', roast: 'light'},
-    {id: 201, name: 'City', roast: 'medium'},
-    {id: 202, name: 'American', roast: 'medium'},
-    {id: 203, name: 'Breakfast', roast: 'medium'},
-    {id: 301, name: 'High', roast: 'dark'},
-    {id: 302, name: 'Continental', roast: 'dark'},
-    {id: 303, name: 'New Orleans', roast: 'dark'},
-    {id: 304, name: 'European', roast: 'dark'},
-    {id: 305, name: 'Espresso', roast: 'dark'},
-    {id: 306, name: 'Viennese', roast: 'dark'},
-    {id: 307, name: 'Italian', roast: 'dark'},
-    {id: 308, name: 'French', roast: 'dark'},
+    {id: 101, name: 'Light City', roast: 'light', image: 'images/light-city.jpeg'},
+    {id: 102, name: 'Half City', roast: 'light', image: 'images/half-city.jpeg'},
+    {id: 103, name: 'Cinnamon', roast: 'light', image: 'images/cinnamon.jpeg'},
+    {id: 201, name: 'City', roast: 'medium', image: 'images/city.jpeg'},
+    {id: 202, name: 'American', roast: 'medium', image: 'images/american.webp'},
+    {id: 203, name: 'Breakfast', roast: 'medium', image: 'images/breakfast.jpeg'},
+    {id: 301, name: 'High', roast: 'dark', image: 'images/high.jpeg'},
+    {id: 302, name: 'Continental', roast: 'dark', image: 'images/continental.jpeg'},
+    {id: 303, name: 'New Orleans', roast: 'dark', image: 'images/new-orleans.jpeg'},
+    {id: 304, name: 'European', roast: 'dark', image: 'images/european.jpeg'},
+    {id: 305, name: 'Espresso', roast: 'dark', image: 'images/espresso.jpeg'},
+    {id: 306, name: 'Viennese', roast: 'dark', image: 'images/vienesse.jpeg'},
+    {id: 307, name: 'Italian', roast: 'dark', image: 'images/italian.webp'},
+    {id: 308, name: 'French', roast: 'dark', image: 'images/french.jpeg'},
 ];
-
-let localStorageCoffeeArray = [];
-
-//----------------------------creates new coffee obj-------------------
-function createCoffee(){
-    let newCoffeeInput = document.getElementById('new-coffee-name').value;
-    let newCoffeeRoast = document.querySelector('#new-roast-selection').value;
-    let newCoffeeObj = {};
-
-
-    newCoffeeObj.id = '';
-    newCoffeeObj.name = newCoffeeInput;
-    newCoffeeObj.roast = newCoffeeRoast;
-    coffees.push(newCoffeeObj);
-    localStorageCoffeeArray.push(newCoffeeObj);
-    localStorage.setItem('newCoffees', JSON.stringify(localStorageCoffeeArray));
-    updateCoffees();
-}
-
-
 
 function pullFromLocalStorage(){
     let localStorageCoffees = JSON.parse(localStorage.getItem('newCoffees'));
@@ -99,6 +80,27 @@ function pullFromLocalStorage(){
     updateCoffees();
     console.log(localStorageCoffees);
     console.log(coffees);
+}
+
+
+
+let localStorageCoffeeArray = JSON.parse(localStorage.getItem('newCoffees'));
+
+//----------------------------creates new coffee obj-------------------
+function createCoffee(){
+    let newCoffeeInput = document.getElementById('new-coffee-name').value;
+    let newCoffeeRoast = document.querySelector('#new-roast-selection').value;
+    let newCoffeeObj = {};
+
+
+    newCoffeeObj.id = '';
+    newCoffeeObj.name = newCoffeeInput;
+    newCoffeeObj.roast = newCoffeeRoast;
+    newCoffeeObj.image = 'images/insert-coffee.webp';
+    coffees.push(newCoffeeObj);
+    localStorageCoffeeArray.push(newCoffeeObj);
+    localStorage.setItem('newCoffees', JSON.stringify(localStorageCoffeeArray));
+    updateCoffees();
 }
 
 
