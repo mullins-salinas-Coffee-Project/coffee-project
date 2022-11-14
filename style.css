@@ -1,10 +1,15 @@
 html, body {
     font-family: 'Chivo', sans-serif;
     color: #e7b17d;
+
 }
 
 body {
-    background-color: #99592b;
+    background-color: #551E19;
+    background-image: url("images/fireplace.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .headerFont {
@@ -55,8 +60,8 @@ body {
 }
 
 .cigar-pairing-box {
-    /*position: fixed;*/
-    /*right: 10em;*/
+    position: fixed;
+    right: 10em;
     /*bottom: 2em;*/
     /*z-index: 1030;*/
 }
@@ -64,10 +69,42 @@ body {
 .cigar-pairing-box, .roast-pairing-list li, .cigar-pairing-list li {
     background-color: #551e19;
     color: #e7b17d;
+    border-radius: 2%;
 }
 
 .offcanvas-body, .offcanvas-header {
     background-color: #551e19;
     border-color: black;
     color: #e7b17d;
+}
+
+.pairing-card{
+    width: 36%;
+    height: 20%;
+    margin-top: 30em;
+    margin-right: -9em;
+    border-radius: 2%;
+    font-size: 15px;
+}
+
+.roast-info{
+    font-size: 15px;
+    width: 38%;
+    position: fixed;
+    right: 0em;
+    top: 3em;
+    z-index: 4;
+    margin-top: 7em;
+    padding-bottom: 0;
+    border-radius: 2%;
+}
+
+.roast-header{
+    background-color: #551e19;
+    border-color: black;
+    color: #e7b17d;
+}
+
+.add-card{
+    background-color: #99592b;
 }

@@ -51,7 +51,7 @@
                     <!---------------------- First Item in Open Menu ------------------------->
                     <li class="nav-item">
                         <a>
-                            <div class="card">
+                            <div class="card add-card">
                                 <div class="card-body">
                                     <form name="searchForm">
                                         <label for="new-roast-selection" style="color: black"> Be Distinguished. Add to
@@ -66,10 +66,10 @@
                                         <!--                           name="search" placeholder="New Coffee Name...">-->
                                         <div class="input-group mb-3">
                                             <input id="new-coffee-name" type="text" class="form-control"
-                                                   placeholder="Add Coffee Here" aria-label="Recipient's username"
+                                                   placeholder="" aria-label="Recipient's username"
                                                    aria-describedby="button-addon2">
                                             <button class="btn btn-outline-secondary" type="button"
-                                                    id="add-coffee-button">Add a Coffee Bean here
+                                                    id="add-coffee-button"><img src="images/coffeebean.png">
                                             </button>
                                         </div>
                                     </form>
@@ -92,8 +92,18 @@
     </div>
     <!-- Container that holds -->
     <!------------------------------------ Cigar Pairing Card ------------------------------------------->
-    <div class="row d-flex justify-content-end col-4">
-        <div class="card cigar-pairing-box d-flex align-items-center" style="width: 18rem; margin-top: 6em;">
+    <div class="row  justify-content-end col-4">
+        <div class="roast-info">
+            <div class="card-header roast-header justify-content-center d-flex">
+                Know Your Roasts
+            </div>
+            <ul class="list-group list-group-flush roast-pairing-list">
+                <li class="list-group-item"> Light Roast: Light brown in color, this roast is generally preferred for milder coffee varieties. There will be no oil on the surface of these beans because they are not roasted long enough for the oils to break through to the surface.</li>
+                <li class="list-group-item"> Medium Roast: This roast is medium brown in color with a stronger flavor and a non-oily surface. It’s often referred to as the American roast because it is generally preferred in the United States.</li>
+                <li class="list-group-item"> Dark Roast: This roast produces shiny black beans with an oily surface and a pronounced bitterness. The darker the roast, the less acidity will be found in the coffee beverage.  Dark roast coffees run from slightly dark to charred, and the names are often used interchangeably — be sure to check your beans before you buy them!</li>
+            </ul>
+        </div>
+        <div class="card cigar-pairing-box d-flex align-items-center pairing-card">
             <div class="card-header">
                 Know Your Pairing
             </div>
@@ -103,16 +113,6 @@
                 <li class="list-group-item"> Rich Full Body Cigar: Paired best with a Dark Roast</li>
             </ul>
         </div>
-        <div>
-            <div class="card-header">
-                Know Your Roasts
-            </div>
-            <ul class="list-group list-group-flush roast-pairing-list">
-                <li class="list-group-item"> Light Roast: Light brown in color, this roast is generally preferred for milder coffee varieties. There will be no oil on the surface of these beans because they are not roasted long enough for the oils to break through to the surface.</li>
-                <li class="list-group-item"> Medium Roast: This roast is medium brown in color with a stronger flavor and a non-oily surface. It’s often referred to as the American roast because it is generally preferred in the United States.</li>
-                <li class="list-group-item"> Dark Roast: This roast produces shiny black beans with an oily surface and a pronounced bitterness. The darker the roast, the less acidity will be found in the coffee beverage.  Dark roast coffees run from slightly dark to charred, and the names are often used interchangeably — be sure to check your beans before you buy them!</li>
-            </ul>
-        </div>
     </div>
 </div>
 <!----------------------------- Button for the add feature --------------------------------------->
@@ -120,7 +120,7 @@
     <button class="navbar-toggler rounded-circle btn-lg add-button" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
             style="background-color: chocolate; margin: 2em;">
-        <span class="navbar-toggler-icon" style=" margin: 2.5em"> Add </span>
+        <span class="navbar-toggler-icon" style=" margin: 2.5em"><img src="images/coffeebean.png"></span>
     </button>
 </div>
 <!-- Bootstrap JavaScript Bundle with Popper ----------------------->
