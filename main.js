@@ -60,7 +60,7 @@ let coffees = [
     {id: 302, name: 'Continental', roast: 'dark', image: 'images/continental.jpeg'},
     {id: 303, name: 'New Orleans', roast: 'dark', image: 'images/new-orleans.jpeg'},
     {id: 304, name: 'European', roast: 'dark', image: 'images/european.jpeg'},
-    {id: 305, name: 'Espresso', roast: 'dark', image: 'images/espresso.jpeg'},
+    {id: 305, name: 'Espresso', roast: 'dark', image: 'images/hear-espresso-beans.jpg'},
     {id: 306, name: 'Viennese', roast: 'dark', image: 'images/vienesse.jpeg'},
     {id: 307, name: 'Italian', roast: 'dark', image: 'images/italian.webp'},
     {id: 308, name: 'French', roast: 'dark', image: 'images/french.jpeg'},
