@@ -52,7 +52,7 @@ function updateCoffees() {
 let coffees = [
     {id: 101, name: 'Light City', roast: 'light', image: 'images/light-city.jpeg'},
     {id: 102, name: 'Half City', roast: 'light', image: 'images/half-city.jpeg'},
-    {id: 103, name: 'Cinnamon', roast: 'light', image: 'images/cinnamon.jpeg'},
+    {id: 103, name: 'Cinnamon', roast: 'light', image: 'images/cinnamon-beans.jpg'},
     {id: 201, name: 'City', roast: 'medium', image: 'images/city.jpeg'},
     {id: 202, name: 'American', roast: 'medium', image: 'images/american.webp'},
     {id: 203, name: 'Breakfast', roast: 'medium', image: 'images/breakfast.jpeg'},
