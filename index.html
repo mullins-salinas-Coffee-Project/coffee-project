@@ -12,7 +12,7 @@
           rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="col-12 d-flex justify-content-center">
@@ -30,8 +30,7 @@
                        aria-label="Recipient's username" aria-describedby="button-addon2">
             </div>
             <label for="roast-selection"></label>
-            <select id="roast-selection" class="form-select" aria-label="Default select example"
-                    style="width: 50%; height: 3em;">
+            <select id="roast-selection" class="form-select" aria-label="Default select example">
                 <option id="submit-all">All</option>
                 <option id="submit-light">Light</option>
                 <option id="submit-medium">Medium</option>
@@ -42,7 +41,7 @@
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
              aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> Welcome, how may we assist, good sir? </h5>
+                <h2 class="offcanvas-title headerFont" id="offcanvasDarkNavbarLabel"> Welcome, how may we assist, good sir? </h2>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
             </div>
@@ -54,9 +53,9 @@
                             <div class="card add-card">
                                 <div class="card-body">
                                     <form name="searchForm">
-                                        <label for="new-roast-selection" style="color: black"> Be Distinguished. Add to
+                                        <label class="new-roast-selection-label" for="new-roast-selection"> Be Distinguished. Add to
                                             the Collection. </label>
-                                        <select id="new-roast-selection" class="form-select"
+                                        <select id="new-roast-selection" class="form-select m-1"
                                                 aria-label="Default select example">
                                             <option id="new-submit-light">light</option>
                                             <option id="new-submit-medium">medium</option>
@@ -65,11 +64,11 @@
                                         <!--                    <input id="new-coffee-name" type="text"-->
                                         <!--                           name="search" placeholder="New Coffee Name...">-->
                                         <div class="input-group mb-3">
-                                            <input id="new-coffee-name" type="text" class="form-control"
+                                            <input id="new-coffee-name" type="text" class="form-control m-1"
                                                    placeholder="" aria-label="Recipient's username"
                                                    aria-describedby="button-addon2">
-                                            <button class="btn btn-outline-secondary" type="button"
-                                                    id="add-coffee-button"><img src="images/coffeebean.png">
+                                            <button class="btn btn-outline-secondary m-1 rounded-circle border-dark border border-3" type="button"
+                                                    id="add-coffee-button"><img src="images/coffeebean.png" alt="Coffee Bean">
                                             </button>
                                         </div>
                                     </form>
@@ -88,13 +87,13 @@
 
     <div class="row col-8">
         <!-------- Container for the function that renders coffee cards ------------->
-        <div class="d-flex flex-wrap" id="coffees" style="margin-top: 6em;"></div>
+        <div class="d-flex flex-wrap coffees-container" id="coffees"></div>
     </div>
     <!-- Container that holds -->
     <!------------------------------------ Cigar Pairing Card ------------------------------------------->
     <div class="row  justify-content-end col-4">
         <div class="roast-info">
-            <div class="card-header roast-header justify-content-center d-flex">
+            <div class="card-header roast-header justify-content-center d-flex headerFont">
                 Know Your Roasts
             </div>
             <ul class="list-group list-group-flush roast-pairing-list">
@@ -104,7 +103,7 @@
             </ul>
         </div>
         <div class="card cigar-pairing-box d-flex align-items-center pairing-card">
-            <div class="card-header">
+            <div class="card-header headerFont">
                 Know Your Pairing
             </div>
             <ul class="list-group list-group-flush cigar-pairing-list">
@@ -117,7 +116,7 @@
 </div>
 <!----------------------------- Button for the add feature --------------------------------------->
 <div>
-    <button class="navbar-toggler rounded-circle btn-lg add-button" type="button" data-bs-toggle="offcanvas"
+    <button class="navbar-toggler rounded-circle border-dark border border-3 btn-lg add-button coffee-bean-btn" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
             style="background-color: chocolate; margin: 2em;">
         <span class="navbar-toggler-icon" style=" margin: 2.5em"><img src="images/coffeebean.png"></span>
@@ -127,6 +126,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
