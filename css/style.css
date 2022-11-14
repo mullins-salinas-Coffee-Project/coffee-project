@@ -1,15 +1,15 @@
 html, body {
     font-family: 'Chivo', sans-serif;
     color: #e7b17d;
-
 }
 
 body {
     background-color: #551E19;
-    background-image: url("images/fireplace.webp");
-    background-size: 100%;
+    background-image: url("../images/fireplace.webp");
+    /*background-size: 100%;*/
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 .headerFont {
@@ -34,7 +34,19 @@ body {
     margin-right: 10px;
 }
 
+.coffees-container {
+    margin-top: 6em;
+}
+
 #roast-selection {
+    background-color: #99592b;
+    border-color: black;
+    color: #e7b17d;
+    width: 50%;
+    height: 3em;
+}
+
+.new-roast-selection-label, #new-roast-selection, #new-coffee-name {
     background-color: #99592b;
     border-color: black;
     color: #e7b17d;
@@ -107,4 +119,8 @@ body {
 
 .add-card{
     background-color: #99592b;
+}
+
+.coffee-bean-btn {
+    border: thick black;
 }

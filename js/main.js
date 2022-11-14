@@ -1,4 +1,7 @@
-"use strict"
+"use strict";
+
+(function () {
+
 
 // Creates the initial coffee table by taking in the Coffee Array's objects and organizing them
 function renderCoffee(coffee) {
@@ -6,8 +9,8 @@ function renderCoffee(coffee) {
     let coffeeCards = '<div class="card coffeeCard" style="width: 18rem;">';
     coffeeCards += '<img src="' + coffee.image +'" className="card-img-top" alt="...">';
     coffeeCards += '<div class="card-body">'
-    coffeeCards += '<h5 class="card-title"> '+ coffee.name +' </h5>'
-    coffeeCards += '<p class="card-text">' + coffee.roast + '</p>'
+    coffeeCards += '<h5 class="card-title headerFont"> '+ coffee.name +' </h5>'
+    coffeeCards += '<p class="card-text">' + coffee.roast + ' roast</p>'
     coffeeCards += '</div>'
     coffeeCards += '</div>'
 
@@ -126,26 +129,21 @@ addCoffeeBtn.addEventListener('click', createCoffee);
 
 
 window.addEventListener('load', pullFromLocalStorage);
+
+})();
+
 /*-----------------------------------------------------------------------------------------------
+
+
 
 
 Skeleton:
 
-User Search
-        - Get attribute from form ###############################################
-        - Take attribute and search again known coffees ############################
 
 create user input form that creates new coffee cards
         - Create 3 variables to count dark, medium, and light roasts
         - Set each variable equal to a function that runs through the 'Coffees' array and counts the number of
           instances each category appears
         - Make newly inputted coffee's IDs = to variable counter + 1
-
-
-
-Design the site, make it perty
-    - Change Similar Variables so its less confusing
-    - Organize Global Variables
-    - Make search bar update on typing or have a better button system
 
  */
