@@ -52,7 +52,7 @@ function updateCoffees() {
 let coffees = [
     {id: 101, name: 'Light City', roast: 'light', image: 'images/light-city.jpeg'},
     {id: 102, name: 'Half City', roast: 'light', image: 'images/half-city.jpeg'},
-    {id: 103, name: 'Cinnamon', roast: 'light', image: 'images/cinnamon.jpeg'},
+    {id: 103, name: 'Cinnamon', roast: 'light', image: 'images/cinnamon-beans.jpg'},
     {id: 201, name: 'City', roast: 'medium', image: 'images/city.jpeg'},
     {id: 202, name: 'American', roast: 'medium', image: 'images/american.webp'},
     {id: 203, name: 'Breakfast', roast: 'medium', image: 'images/breakfast.jpeg'},
@@ -60,7 +60,7 @@ let coffees = [
     {id: 302, name: 'Continental', roast: 'dark', image: 'images/continental.jpeg'},
     {id: 303, name: 'New Orleans', roast: 'dark', image: 'images/new-orleans.jpeg'},
     {id: 304, name: 'European', roast: 'dark', image: 'images/european.jpeg'},
-    {id: 305, name: 'Espresso', roast: 'dark', image: 'images/espresso.jpeg'},
+    {id: 305, name: 'Espresso', roast: 'dark', image: 'images/hear-espresso-beans.jpg'},
     {id: 306, name: 'Viennese', roast: 'dark', image: 'images/vienesse.jpeg'},
     {id: 307, name: 'Italian', roast: 'dark', image: 'images/italian.webp'},
     {id: 308, name: 'French', roast: 'dark', image: 'images/french.jpeg'},
